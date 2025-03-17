@@ -6,22 +6,28 @@ static MAGIC_URL = 'https://api.magicthegathering.io/v1/cards';
 // esempio: MagicService.MAGIC_URL
 
 async getData() {
-	 const request = fetch(MagicService.MAGIC_URL) // fetch dell'url
+	 return fetch(MagicService.MAGIC_URL) // fetch dell'url
 	 .then(res => res.json()) // se lo trovi trasforma la risposta in json
 	 .then(data => {
-		// const cards = data.cards;
+		const magicData = [];
 		for (const cardKey of data.cards) {
 			const cardName = cardKey.name;
 			const cardType = cardKey.type;
 			const cardRarity = cardKey.rarity;
-			console.log('Name: ' + cardName);
-			console.log('Type: ' + cardType);
-			console.log('Rarity: ' + cardRarity);
+			const cardImage = cardKey.imageUrl;
+			// console.log('Name: ' + cardName);
+			// console.log('Type: ' + cardType);
+			// console.log('Rarity: ' + cardRarity);
+			magicData.push({
+				name: cardName, 
+				type: cardType, 
+				rarity: cardRarity,
+				image: cardImage
+			});
 		}
-
-		return request;
+		console.log(magicData);
+		return magicData;
 		})
 	.catch(err => console.error(err));
-	console.log(request);
 	}
 }
