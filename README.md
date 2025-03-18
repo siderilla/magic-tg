@@ -19,3 +19,7 @@ fetchData();
 function render(magicData) -->
 
 <!-- Le proprietà statiche appartengono alla classe stessa, non alle singole istanze. Quindi, quando scrivi "static MAGIC_URL" all'interno della classe, quella proprietà diventa una proprietà del costruttore (MagicService) e non di ogni oggetto creato con la classe. Perciò, all'interno del metodo getData, se vuoi accedere a MAGIC_URL devi farlo tramite il nome della classe (MagicService.MAGIC_URL) oppure tramite this.constructor.MAGIC_URL. In questo modo il JavaScript sa dove cercare la proprietà, evitando l'errore "not defined". -->
+perché preferire una proprietà statica?
+
+/////////////////////////////////////////////////////////////
+
