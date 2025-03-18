@@ -1,6 +1,6 @@
 import MagicService from "./services/magic-service.js";
 
-const cardListContainer = document.getElementById('cardlist-container');
+const cardListContainer = document.getElementById('cardlist-container'); // big contenitore
 
 const service = new MagicService();
 
@@ -8,7 +8,7 @@ function fetchData() {
 	service.getData()
 	.then(data => {
 		for (const card of data) {
-			render(card);
+			render(card); // chiamo render su getdata se no non si vede nacippa
 		}
 	});
 }
